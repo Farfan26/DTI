@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0a2247" />
+  <meta name="description" content="PMO-Bot SIGRED: asistente ejecutivo con consultas RAG sobre el proyecto de gestión de espacios deportivos de la Universidad de Piura." />
+  <title>PMO-Bot SIGRED | Asistente ejecutivo</title>
+  <style>
+    :root{color-scheme:light;--navy:#0b2044;--navy2:#123b77;--blue:#1764cb;--orange:#f48a35;--paper:#f4f7fc;--ink:#11233f;--muted:#5d6c85;--line:#dde6f2;--shadow:0 22px 55px rgba(17,46,93,.1)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 10% 7%,#e4efff 0,transparent 28%),radial-gradient(circle at 91% 89%,#eaf3ff 0,transparent 29%),var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}
+    .header{background:linear-gradient(115deg,var(--navy),#123665);color:#fff;border-bottom:3px solid var(--orange)}
+    .header-inner{width:min(1400px,calc(100% - 48px));min-height:78px;margin:auto;display:flex;gap:18px;align-items:center;justify-content:space-between}
+    .identity{display:flex;align-items:center;gap:14px}.mark{height:48px;width:48px;border:1px solid #ffffff3b;border-radius:15px;background:#ffffff18;display:grid;place-items:center;font-weight:900;letter-spacing:-.05em;font-size:15px;color:white}.brand-name{font-size:1.06rem;font-weight:800;letter-spacing:-.02em}.brand-note{font-size:.79rem;color:#cdddf3}.status{display:inline-flex;align-items:center;gap:8px;background:#ffffff17;border:1px solid #ffffff2a;border-radius:100px;padding:8px 13px;font-size:.8rem;color:#e8f0ff}.status::before{content:"";width:7px;height:7px;background:#74e8b0;border-radius:50%;box-shadow:0 0 0 3px #74e8b02b}
+    main{width:min(1400px,calc(100% - 48px));margin:34px auto 52px}.intro{margin:0 0 22px;display:flex;align-items:flex-end;justify-content:space-between;gap:25px}.intro h1{margin:0 0 4px;font-weight:850;letter-spacing:-.05em;font-size:clamp(1.5rem,2.5vw,2.35rem)}.intro p{margin:0;color:var(--muted);max-width:760px;font-size:.96rem}.tag{display:inline-flex;gap:7px;align-items:center;white-space:nowrap;color:#245286;background:#e3efff;border:1px solid #d0e3fd;border-radius:9px;padding:8px 11px;font-size:.78rem;font-weight:700}
+    .layout{display:grid;grid-template-columns:minmax(245px,305px) minmax(0,1fr);gap:20px;align-items:stretch}.info,.chat-card{background:white;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);overflow:hidden}
+    .info{padding:28px 24px}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-weight:800;font-size:.69rem;color:#1e63b8}.info h2{font-size:1.52rem;line-height:1.18;margin:10px 0 12px;letter-spacing:-.035em}.info p{font-size:.92rem;color:var(--muted);margin:0}.accent{height:5px;width:65px;border-radius:8px;background:linear-gradient(90deg,var(--orange),#ffba79);margin:24px 0}.questions{list-style:none;margin:0;padding:0;display:grid;gap:11px}.questions li{display:flex;gap:10px;align-items:flex-start;padding:12px;border-radius:13px;background:#f6f9fe;font-size:.88rem;font-weight:630}.ico{width:27px;height:27px;flex:0 0 27px;display:grid;place-items:center;border-radius:8px;background:#e4eefd;color:#194d90;font-size:.9rem}.detail{border-top:1px solid var(--line);margin-top:25px;padding-top:18px;font-size:.8rem;color:var(--muted)}.detail b{color:var(--ink)}
+    .chat-card{display:flex;flex-direction:column;min-width:0}.chat-head{height:66px;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:0 23px;background:#fff;border-bottom:1px solid var(--line)}.chat-label{display:flex;align-items:center;gap:12px;font-size:.94rem;font-weight:800}.chat-icon{background:linear-gradient(145deg,#1e66c9,#0c2d66);border-radius:12px;width:35px;height:35px;display:grid;place-items:center;color:#fff}.chat-description{font-size:.75rem;color:var(--muted);font-weight:500}.chip{color:#2262b0;background:#ecf4ff;border:1px solid #d7e9ff;border-radius:30px;font-size:.74rem;padding:5px 10px;font-weight:720}
+    #sigred-chat{width:100%;height:min(75vh,820px);min-height:590px;background:#fff;position:relative;overflow:hidden}#sigred-chat>*{width:100%!important;max-width:100%!important;height:100%!important;min-height:100%!important}#sigred-chat iframe{width:100%!important;max-width:100%!important;height:100%!important;min-height:100%!important;border:0!important}
+    .loading{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;color:var(--muted);font-size:.89rem;background:#fff}.loading>div{text-align:center;padding:30px}.spinner{display:block;margin:0 auto 13px;width:27px;height:27px;border-radius:50%;border:3px solid #dce9ff;border-top-color:var(--blue);animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+    footer{margin-top:20px;color:#77849a;font-size:.75rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}footer b{color:#314463}
+    @media(max-width:900px){.layout{grid-template-columns:1fr}.info{padding:22px}.questions{grid-template-columns:repeat(2,minmax(0,1fr))}.accent{margin:16px 0}.info h2{font-size:1.28rem}.chat-card{min-height:540px}#sigred-chat{height:70dvh;min-height:500px}}
+    @media(max-width:600px){.header-inner,main{width:calc(100% - 24px)}.header-inner{min-height:68px}.status{font-size:0;width:12px;height:12px;padding:6px;gap:0;overflow:hidden}.status::before{flex-shrink:0}.intro{display:block;margin-bottom:16px}.intro h1{font-size:1.55rem}.tag{margin-top:14px}.layout{gap:14px}.info{padding:18px}.questions{grid-template-columns:1fr;gap:7px}.questions li{padding:9px 11px}.chat-head{padding:0 13px}.chat-description{display:none}.chat-card{border-radius:16px}#sigred-chat{height:76dvh;min-height:530px}.chip{font-size:.67rem;padding:5px 7px}main{margin-top:24px}}
+    @media(prefers-reduced-motion:reduce){.spinner{animation:none}html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="identity"><div class="mark" aria-hidden="true">S</div><div><div class="brand-name">SIGRED <span style="color:#ffb378">/ PMO-Bot</span></div><div class="brand-note">Proyecto académico · Universidad de Piura</div></div></div>
+      <span class="status">Asistente disponible</span>
+    </div>
+  </header>
+  <main>
+    <section class="intro" aria-label="Presentación">
+      <div><h1>Asistente ejecutivo de SIGRED</h1><p>Consulta avances, riesgos, hitos y presupuesto del proyecto a través de una conversación apoyada en sus documentos oficiales.</p></div>
+      <span class="tag">Base de conocimiento · RAG</span>
+    </section>
+    <section class="layout">
+      <aside class="info" aria-label="Temas que puedes consultar">
+        <span class="eyebrow">Consulta inteligente</span>
+        <h2>La información del proyecto, organizada.</h2>
+        <p>Selecciona una opción dentro del chat o escribe una pregunta relacionada con SIGRED.</p>
+        <div class="accent" aria-hidden="true"></div>
+        <ul class="questions">
+          <li><span class="ico" aria-hidden="true">▥</span><span>Estado y avance del proyecto</span></li>
+          <li><span class="ico" aria-hidden="true">⚑</span><span>Riesgos y alertas</span></li>
+          <li><span class="ico" aria-hidden="true">▦</span><span>Hitos y cronograma</span></li>
+          <li><span class="ico" aria-hidden="true">✳</span><span>Consultas libres y presupuesto</span></li>
+        </ul>
+        <div class="detail"><b>Nota académica:</b> el asistente distingue información planificada, confirmada y provisional. Si un dato no está documentado, debe indicarlo.</div>
+      </aside>
+      <section class="chat-card" aria-label="Chatbot PMO-Bot SIGRED">
+        <div class="chat-head"><div class="chat-label"><span class="chat-icon" aria-hidden="true">✦</span><span>PMO-Bot SIGRED <span class="chat-description">· Consulta documental</span></span></div><span class="chip">Chat interactivo</span></div>
+        <div id="sigred-chat" aria-label="Ventana de chat">
+          <div id="loading" class="loading"><div><span class="spinner" aria-hidden="true"></span>Conectando con el asistente…</div></div>
+        </div>
+      </section>
+    </section>
+    <footer><span>Demostración académica — PMO-Bot SIGRED</span><span>Motor conversacional: <b>Voiceflow</b> · Proyecto de gestión de espacios deportivos</span></footer>
+  </main>
+  <script type="text/javascript">
+    // Proyecto y endpoint públicos extraídos de la configuración Widget de Voiceflow.
+    // No requiere API key ni expone credenciales privadas.
+    (function (d,t){
+      var v=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      v.onload=function(){
+        try {
+          window.voiceflow.chat.load({
+            verify: { projectID:'6ad8ff67b70fcc45e0aa5ccb' },
+            url:'https://general-runtime.voiceflow.com',
+            versionID:'production',
+            render: { mode:'embedded', target:d.getElementById('sigred-chat') }
+          });
+          // El widget administra su renderizado interno. Retiramos únicamente el loader visual.
+          var loader=d.getElementById('loading');
+          if(loader)loader.remove();
+        } catch(e){
+          showError();
+        }
+      };
+      v.onerror=showError;
+      v.src='https://cdn.voiceflow.com/widget-next/bundle.mjs';
+      v.type='text/javascript';
+      s.parentNode.insertBefore(v,s);
+      function showError(){
+        var el=d.getElementById('sigred-chat');
+        if(el)el.innerHTML='<div style="padding:35px;color:#384c6a;font:15px system-ui">No se pudo cargar el chat. Verifica la publicación del agente y la conexión a Internet.</div>';
+      }
+    })(document,'script');
+  </script>
+</body>
+</html>

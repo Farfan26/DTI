@@ -1,0 +1,22 @@
+PMO-BOT SIGRED - VISTA WEB AMPLIA (2026)
+
+Archivos:
+  index.html  Pagina Web responsiva conectada al bot publicado en Voiceflow.
+
+Para obtener una URL publica propia:
+1. Comprueba que el bot Webchat esté publicado en Voiceflow y que funcione en Run.
+2. Entra a https://app.netlify.com/drop/ (o al panel Sites de Netlify).
+3. Arrastra la carpeta PMO_Bot_SIGRED_Web_Amplia descomprimida a Netlify Drop.
+4. Copia el enlace https://[nombre-del-sitio].netlify.app generado.
+5. Abrelo en una ventana de incógnito y prueba los cuatro botones y las cinco consultas.
+6. Si necesitas cambiar el nombre del sitio, hazlo desde la configuracion del sitio de Netlify.
+
+Importante:
+- Este paquete no es un agente de IA nuevo: integra el proyecto existente en Voiceflow.
+- El script apunta a production con el projectID indicado en las capturas de Voiceflow.
+- No se expone ninguna API key.
+- La conectividad en vivo no se puede verificar offline. Si el widget no carga, revisa Deploy > Widget,
+  Security (dominios permitidos), y que el agente esta publicado en Production.
+- La URL /share/.../draft es un enlace de vista previa, distinto de una URL alojada en Netlify.
+- Las actualizaciones a produccion en Voiceflow se reflejan sin volver a subir esta pagina, si no modificas el script.
+- El diseño es una presentacion academica independiente, no altera tu repositorio SIGRED original.
