@@ -172,3 +172,33 @@ html,body{font-family:"Inter","Segoe UI",system-ui,-apple-system,Arial,sans-seri
 .ai-test-button:hover{background:#e6f2ff}.ai-test-button:disabled{opacity:.6;cursor:wait}
 #aiTestResult{margin:0;padding:10px 12px;border-radius:10px;background:#fff;overflow-wrap:anywhere;font-size:.9rem;line-height:1.5;color:#243b54}
 .ai-test-panel small{color:#5b6f85;line-height:1.4}
+/* V10 — formato editorial seguro de respuestas y mejora cromática de tarjetas */
+:root {--sigred-azure:#0a65b1;--sigred-turquoise:#0aa6a6;--sigred-amber:#ef9f37;--sigred-lilac:#7657c9}
+.entry-bubble{font-family:Inter,'Segoe UI',system-ui,sans-serif;font-size:14.5px;line-height:1.72;letter-spacing:.005em;overflow-wrap:anywhere}
+.entry-bubble p{margin:0 0 10px;line-height:1.72}
+.entry-bubble p:last-child{margin-bottom:0}
+.entry-bubble .reply-heading{font-size:15px;line-height:1.35;margin:14px 0 8px;font-weight:750;color:#133b62}
+.entry-bubble .reply-list{margin:6px 0 10px;padding-left:1.35rem}
+.entry-bubble .reply-list li{margin:4px 0}
+.entry-bubble strong{font-weight:750;color:#104f7a}
+.entry-bubble .reply-table-scroll{max-width:100%;overflow-x:auto;margin:13px 0 16px;border-radius:13px;border:1px solid #cce0f3;background:white;box-shadow:0 4px 13px rgba(15,53,91,.05)}
+.entry-bubble .reply-table{width:100%;border-collapse:collapse;min-width:420px;font-size:13px;font-variant-numeric:tabular-nums}
+.reply-table th{background:#e7f2fe;color:#123e6b;font-size:12.5px;font-weight:750;text-align:left;padding:11px 12px;border-bottom:1px solid #cce0f3}
+.reply-table td{padding:11px 12px;vertical-align:top;border-bottom:1px solid #ecf1f7;color:#243c56}
+.reply-table tbody tr:nth-child(even){background:#f8fbff}
+.reply-table tbody tr:last-child td{border-bottom:0}
+.reply-code{max-width:100%;overflow-x:auto;background:#0e2543;color:#d7eefc;padding:12px 14px;border-radius:11px;font-size:12px}
+.starter-card,.dock-topic{transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.starter-card:hover,.dock-topic:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(8,70,133,.12)!important}
+.dock-topic{border-radius:15px!important;font-weight:750!important}
+.dock-topic-estado{background:linear-gradient(145deg,#eaf5ff,#fafdff)!important;border-color:#bcdafa!important}
+.dock-topic-riesgos{background:linear-gradient(145deg,#fff0f0,#fffafa)!important;border-color:#ffc9d0!important}
+.dock-topic-cronograma{background:linear-gradient(145deg,#fff5e5,#fffefd)!important;border-color:#f9d5a2!important}
+.dock-topic-asesoria{background:linear-gradient(145deg,#e6fbf7,#fcfffe)!important;border-color:#afe7db!important}
+.dock-topic-presupuesto{background:linear-gradient(145deg,#e9f9ed,#fdfffe)!important;border-color:#bbebc6!important}
+.dock-topic-biblioteca{background:linear-gradient(145deg,#f4eeff,#fefdff)!important;border-color:#d9c9fb!important}
+.dock-topic-visuales{background:linear-gradient(145deg,#fff0fa,#fffdfe)!important;border-color:#f2c6e8!important}
+.dock-topic-consulta{background:linear-gradient(145deg,#eaf5fe,#fafeff)!important;border-color:#b8def4!important}
+.gallery-card img{max-height:330px;object-fit:contain;background:#f7fafd;border-radius:11px}
+.gallery-card{min-width:0;overflow:hidden}
+@media(max-width:600px){.entry-bubble{font-size:14px}.entry-bubble .reply-table{min-width:330px;font-size:12px}.reply-table td,.reply-table th{padding:9px}.gallery-card img{max-height:260px}}

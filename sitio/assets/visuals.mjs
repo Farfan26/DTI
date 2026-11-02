@@ -11,18 +11,18 @@ export function findVisuals(q='',catalog,limit=4){
  const s=clean(q);
  // Petición general: mostrar una selección variada de imágenes sin saturar el chat.
  if(!terms.length || /^(ver|mostrar|muestrame|dame) (las )?(imagenes|graficos|visuales)( de sigred)?$/.test(s)) {
-  return records.filter(r=>r.type==='grafico').slice(0,limit);
+  return records.filter(r=>r.id?.startsWith('final-fig')).slice(3,3+limit);
  }
  const ranked=records.map(r=>{
   let score=0;const title=clean(r.title+' '+r.description),tags=clean((r.terms||[]).join(' '));
   for(const token of terms){if(title.includes(token))score+=5;if(tags.split(' ').includes(token))score+=7;else if(tags.includes(token))score+=2;}
-  if(/p[aá]gina|pdf|documento|captura/.test(q.toLowerCase()))score+=r.type==='documento'?5:-3;
-  else score+=r.type==='grafico'?5:0;
+  if(/p[aá]gina|pdf|documento|captura/.test(q.toLowerCase()))score+=r.id?.startsWith('final-page-')?6:0;
+  else score+=r.id?.startsWith('final-fig')?5:0;
   // evitar página genérica de otras áreas
   if(s.includes('riesg')&&r.category==='riesgos')score+=9;
-  if(/presupuest|contingenc|costo/.test(s)&&r.id==='grafico-presupuesto')score+=18;
-  if(/avanc|completad|entregable|66/.test(s)&&r.id==='grafico-avance')score+=18;
-  if(/hito|gantt|cronogram|fecha/.test(s)&&r.id==='grafico-hitos')score+=18;
+  if(/presupuest|contingenc|costo|van|economia/.test(s)&&r.id==='final-fig-22')score+=25;
+  if(/validacion|usabilidad|tiempos|tarea/.test(s)&&r.id==='final-fig-21')score+=25;
+  if(/cronogram|flujo|proceso/.test(s)&&r.id==='final-fig-01')score+=15;
   return {r,score};
  }).sort((a,b)=>b.score-a.score);
  const selected=ranked.filter(x=>x.score>=7).slice(0,limit).map(x=>x.r);

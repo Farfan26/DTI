@@ -1,5 +1,5 @@
 /**
- * Buscador lexical por fragmentos de la DOCUMENTACIÓN MAESTRA de 105 páginas.
+ * Buscador lexical por fragmentos de la INFORME FINAL de 80 páginas.
  * Jamás fabrica una frase: devuelve texto literal y el número de página.
  * No es embedding semántico; sirve como índice local de respaldo sin tokens.
  */
@@ -10,7 +10,7 @@ export function searchMaster(question,chunks=[],limit=3){
  if(typeof question!=='string'||!Array.isArray(chunks)||!chunks.length)return [];
  const q=clean(question);
  const pageRequest=q.match(/(?:pagina|pag) (\d{1,3})/);
- if(pageRequest && (+pageRequest[1] >= 1 && +pageRequest[1] <= 105) && /documentacion|maestra|pagina/.test(q)){
+ if(pageRequest && (+pageRequest[1] >= 1 && +pageRequest[1] <= 80) && /documentacion|maestra|pagina/.test(q)){
    return chunks.filter(c=>c.page===+pageRequest[1]).slice(0,limit).map(c=>({...c,score:100}));
  }
  const terms=queryWords(question);if(!terms.length)return [];
@@ -35,6 +35,6 @@ export function searchMaster(question,chunks=[],limit=3){
  return scores.sort((a,b)=>b.score-a.score).slice(0,limit);
 }
 export function quoteMasterResults(hits,limit=2){
- return hits.slice(0,limit).map(h=>`**Documentación Maestra, página ${h.page}:**\n${h.text.slice(0,650)}${h.text.length>650?'…':''}`).join('\n\n');
+ return hits.slice(0,limit).map(h=>`**Informe Final Consolidado, página ${h.page}:**\n${h.text.slice(0,650)}${h.text.length>650?'…':''}`).join('\n\n');
 }
-export function masterLinks(hits){return [...new Set(hits.map(h=>h.page))].map(page=>({name:`Documentación Maestra SIGRED · pág. ${page}`,path:`documentos/SIGRED_DOCUMENTACION_MAESTRA_2026.pdf#page=${page}`}));}
+export function masterLinks(hits){return [...new Set(hits.map(h=>h.page))].map(page=>({name:`Informe Final SIGRED · pág. ${page}`,path:`documentos/SIGRED_Informe_Final_Consolidado_2026.pdf#page=${page}`}));}

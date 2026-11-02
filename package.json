@@ -1,6 +1,6 @@
 {
-  "name": "pmo-bot-sigred-v8-github-netlify-gemini",
-  "version": "9.1.0",
+  "name": "sigred-pmo-bot-v10-final-gemini",
+  "version": "10.0.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -9,9 +9,9 @@
   "scripts": {
     "start": "node pruebas/preview-v8.mjs",
     "dev": "node pruebas/preview-v8.mjs",
-    "test": "node --test pruebas/*.test.mjs",
+    "test": "node --test pruebas/actual-v10.test.mjs",
     "preview": "node pruebas/preview-v8.mjs",
     "preview:gemini": "node --env-file=.env pruebas/preview-v8.mjs"
   },
-  "description": "PMO-Bot SIGRED V9.1: Gemini con autodiagnóstico y accesos permanentes, 105 páginas RAG, Gemini por Netlify Functions"
+  "description": "SIGRED V10: Informe final consolidado 80 páginas, Gemini, figuras recortadas, semáforo académico, conversación y tablas seguras"
 }
