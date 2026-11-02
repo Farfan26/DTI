@@ -1,3 +1,23 @@
+# ACTUALIZACIÓN V9.1 — GEMINI COMPROBABLE
+
+**Primero lee `GUIA_GEMINI_REAL_V9_1.md`.** Se añadió un botón `Configuración → Probar conexión Gemini` para verificar la llamada real a Google. El modo documental funciona aunque Gemini no esté configurado. La prueba real exige configurar tu clave en Netlify.
+
+---
+
+# PMO-Bot SIGRED V9 — Botones permanentes y estilo profesional
+
+**NOVEDADES:** una barra de 8 accesos rápidos que no desaparece al enviar mensajes o cambiar de conversación; tarjetas multicolor, tipografía mejorada, versión celular con desplazamiento horizontal y opción «Ver todas». Conserva los 105 folios documentales, Gemini por Netlify Functions, historial y nombres del Grupo 09.
+
+**Para actualizar la V8 publicada sin volver a subir documentos**, descarga `G9_SIGRED_V9_ACTUALIZACION_SOLO_3_ARCHIVOS.zip` y reemplaza los tres archivos `sitio/index.html`, `sitio/assets/app.mjs`, `sitio/assets/styles.css` en el repositorio de GitHub que esté conectado a Netlify. **No borres `netlify/functions` ni `netlify.toml`.**
+
+**Instalación limpia:** descomprime el ZIP completo y sube su contenido (no el ZIP) a la raíz del repositorio GitHub. Netlify usa `publish = sitio` y `functions = netlify/functions` en `netlify.toml`. `GEMINI_API_KEY` solo se configura como secreto en Netlify.
+
+**Pruebas locales:** `npm test` (46 tests automatizados), `npm start` y abre `http://127.0.0.1:8791/`. No es necesaria ninguna clave para usar el modo documental. La llamada REAL a Gemini requiere configuración del secreto y despliegue; no se ha verificado con la clave del usuario.
+
+**Guía de actualización:** `guias/16_BOTONES_PERMANENTES_V9.md`.
+
+---
+
 # PMO-Bot SIGRED V8 · Documentación de 105 páginas + Gemini + Netlify
 
 **Grupo 09 · Universidad de Piura · DTI · 2026**

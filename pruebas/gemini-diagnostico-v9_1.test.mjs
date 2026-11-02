@@ -1,0 +1,16 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import chat from '../netlify/functions/chat.mjs';
+import health from '../netlify/functions/health.mjs';
+import {readFile} from 'node:fs/promises';
+function req(){return new Request('https://sigred.example/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:'Explica los riesgos R-G2 y medidas de seguimiento en SIGRED.',topic:'riesgos',mode:'ai',history:[]})})}
+function setEnv(key,enabled){process.env.GEMINI_API_KEY=key;process.env.ENABLE_PUBLIC_AI=enabled;}
+async function runMock(status,text){const orig=global.fetch;global.fetch=async(_uri,options)=>{assert.equal(options.headers['x-goog-api-key'],'clave_solo_para_test');return Response.json(status===200?{candidates:[{content:{parts:[{text:'R-G2 requiere seguimiento documental.'}]}}],usageMetadata:{promptTokenCount:22,candidatesTokenCount:11,totalTokenCount:33}}:{error:{message:'DO_NOT_EXPOSE_PROVIDER_DETAILS'}},{status});};try{const r=await chat(req());assert.equal(r.status,200);return await r.json()}finally{global.fetch=orig}}
+test('health informa configuración sin exponer la clave',async()=>{setEnv('clave_solo_para_test','true');const r=await health(new Request('https://x.example/api/health'));const data=await r.json();assert.equal(data.keyPresent,true);assert.equal(data.aiConfigured,true);assert.equal(data.liveApiVerified,false);assert.ok(!JSON.stringify(data).includes('clave_solo_para_test'))});
+test('Gemini exitoso marca modo verificado y reporta tokens',async()=>{setEnv('clave_solo_para_test','true');const d=await runMock(200);assert.equal(d.mode,'gemini');assert.equal(d.aiStatus,'verified_response');assert.equal(d.usage.totalTokens,33)});
+test('API Key rechazada es visible como diagnóstico seguro',async()=>{setEnv('clave_solo_para_test','true');const d=await runMock(403);assert.equal(d.mode,'local');assert.equal(d.aiStatus,'invalid_api_key');assert.ok(!JSON.stringify(d).includes('DO_NOT_EXPOSE_PROVIDER_DETAILS'))});
+test('cuota agotada se diferencia de fallo de API Key',async()=>{setEnv('clave_solo_para_test','true');const d=await runMock(429);assert.equal(d.aiStatus,'quota_exceeded');assert.equal(d.mode,'local')});
+test('modelo incorrecto se explica como modelo no encontrado',async()=>{setEnv('clave_solo_para_test','true');const d=await runMock(404);assert.equal(d.aiStatus,'model_not_found')});
+test('clave ausente no llama proveedor',async()=>{setEnv('','true');const d=await (await chat(req())).json();assert.equal(d.aiStatus,'key_missing');assert.equal(d.mode,'local')});
+test('API configurada pero inhabilitada devuelve diagnóstico',async()=>{setEnv('clave_solo_para_test','false');const d=await (await chat(req())).json();assert.equal(d.aiStatus,'public_ai_disabled')});
+test('la pantalla ofrece prueba real operativa',async()=>{const h=await readFile(new URL('../sitio/index.html',import.meta.url),'utf8');const js=await readFile(new URL('../sitio/assets/app.mjs',import.meta.url),'utf8');assert.ok(h.includes('id="testGemini"'));assert.ok(js.includes("addEventListener('click',testGeminiConnection)"));assert.ok(js.includes("data.mode==='gemini'&&data.aiStatus==='verified_response'"))});

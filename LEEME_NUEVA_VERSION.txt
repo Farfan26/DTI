@@ -1,0 +1,6 @@
+SIGRED V9 — BOTONES SIEMPRE VISIBLES
+
+Lee guias/16_BOTONES_PERMANENTES_V9.md.
+
+La nueva barra de acceso mantiene ocho botones operativos visibles en todo momento.
+Conserva la infraestructura Gemini y Netlify Functions de V8.

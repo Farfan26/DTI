@@ -1,6 +1,6 @@
 {
   "name": "pmo-bot-sigred-v8-github-netlify-gemini",
-  "version": "8.0.0",
+  "version": "9.1.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -13,5 +13,5 @@
     "preview": "node pruebas/preview-v8.mjs",
     "preview:gemini": "node --env-file=.env pruebas/preview-v8.mjs"
   },
-  "description": "PMO-Bot SIGRED V8: 105 páginas RAG, 8 tarjetas, Netlify Functions y Gemini"
+  "description": "PMO-Bot SIGRED V9.1: Gemini con autodiagnóstico y accesos permanentes, 105 páginas RAG, Gemini por Netlify Functions"
 }
