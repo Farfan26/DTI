@@ -1,0 +1,24 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {getAnswer,searchKnowledge} from '../sitio/assets/search.mjs';
+const kb=JSON.parse(readFileSync(new URL('../sitio/data/knowledge.json', import.meta.url),'utf8'));
+test('hay siete fuentes documentales, incluido el manual de 105 páginas',()=>assert.equal(Object.keys(kb.sources).length,7));
+test('40 fichas disponibles',()=>assert.ok(kb.records.length>=40));
+test('presupuesto total verificado',()=>{const a=getAnswer('¿Cuánto cuesta el proyecto SIGRED?',kb);assert.ok(a.found);assert.match(a.items[0].rec.answer,/29,208\.85/)});
+test('reserva de contingencia',()=>{const a=getAnswer('¿Cuánto asciende la reserva de contingencia?',kb);assert.ok(a.found);assert.match(a.items[0].rec.answer,/2,655\.35/)});
+test('riesgos principales',()=>{const a=getAnswer('¿Cuáles son los dos riesgos principales y su probabilidad?',kb,'riesgos');assert.ok(a.found);assert.match(a.items[0].rec.answer,/R-G2/);assert.match(a.items[0].rec.answer,/R-T3/)});
+test('estado por boton',()=>{const a=getAnswer('Estado del Proyecto',kb,'estado');assert.ok(a.found);assert.match(a.items[0].rec.answer,/66\.67/)});
+test('fechas de cronograma',()=>{const a=getAnswer('Hitos y Cronograma',kb,'cronograma');assert.ok(a.found);assert.match(a.items[0].rec.answer,/31\/10\/2026/)});
+test('pregunta externa no contesta',()=>{const a=getAnswer('¿Quién ganó el Mundial de fútbol de 2022?',kb);assert.equal(a.found,false)});
+test('consulta extraña no inventa',()=>{const a=getAnswer('¿Cuál es la mascota de mi vecino?',kb);assert.equal(a.found,false)});
+test('R-G2 identifica su ficha',()=>{const a=getAnswer('¿Qué disparador tiene el riesgo R-G2?',kb);assert.ok(a.found);assert.equal(a.items[0].rec.id,'riesgo-g2')});
+test('no clasificar costo ejecutado como gasto',()=>{const a=getAnswer('¿Cuál es el costo real ejecutado?',kb);assert.ok(a.found);assert.match(a.items[0].rec.answer,/no est[aá] informado|no est[aá] disponible/i)});
+test('pregunta corta qué es SIGRED',()=>{const a=getAnswer('¿Qué es SIGRED?',kb);assert.ok(a.found);assert.equal(a.items[0].rec.id,'proposito')});
+test('pregunta corta cómo va el proyecto',()=>{const a=getAnswer('¿Cómo va el proyecto?',kb);assert.ok(a.found);assert.equal(a.items[0].rec.id,'estado-resumen')});
+test('pregunta corta director del proyecto',()=>{const a=getAnswer('¿Quién dirige SIGRED?',kb);assert.ok(a.found);assert.equal(a.items[0].rec.id,'equipo')});
+test('pregunta corta semáforo',()=>{const a=getAnswer('¿Cuál es el semáforo?',kb);assert.ok(a.found);assert.equal(a.items[0].rec.id,'estado-semaforo')});
+
+test('escenario PMO: desvío y compresión sin datos inventados',()=>{const a=getAnswer('Compara Fast-Tracking y Crashing para un desvío de cronograma SIGRED',kb);assert.equal(a.items[0].rec.id,'pmo-desvio');assert.match(a.items[0].rec.answer,/No hay datos verificados/)});
+test('escenario PMO: control de cambios con gobernanza condicionada',()=>{const a=getAnswer('Simular solicitud de cambio de alcance y su aprobación',kb);assert.ok(a.found);assert.match(a.items[0].rec.answer,/aprobaci[oó]n|CCB/i)});
+test('escenario PMO: escalación R-G2 no inventa mitigaciones',()=>{const a=getAnswer('Escalar riesgo crítico R-G2',kb);assert.ok(a.found);assert.match(a.items[0].rec.answer,/R-G2/)});

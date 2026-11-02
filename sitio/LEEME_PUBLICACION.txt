@@ -1,0 +1,7 @@
+SIGRED V8: ATENCIÓN
+
+Para publicar con Gemini en Netlify necesitas TODA la carpeta del proyecto, no solo sitio/.
+El directorio de publicación es sitio, PERO las funciones API están en netlify/functions.
+Para IA configura GEMINI_API_KEY en las variables privadas de Netlify.
+No copies la API Key en ningún fichero de esta carpeta web.
+Ver /guias/14_GITHUB_NETLIFY_GEMINI_PASO_A_PASO.md en el ZIP completo.

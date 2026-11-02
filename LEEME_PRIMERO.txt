@@ -1,0 +1,17 @@
+PMO-BOT SIGRED V8 · INSTALACIÓN SIMPLE
+=======================================
+1) Para actualizar GitHub + Netlify, NO subas solo sitio/.
+   Sube todos los archivos y carpetas de esta carpeta, incluyendo
+   netlify.toml, netlify/functions y sitio/.
+2) Netlify lee netlify.toml automáticamente (Publish directory: sitio).
+3) Añade en Netlify → Project configuration → Environment variables:
+      GEMINI_API_KEY = (tu clave privada de Google AI Studio)
+      ENABLE_PUBLIC_AI = true
+      GEMINI_MODEL = gemini-3.5-flash-lite (opcional)
+4) Redeploy. Comprueba https://TU-WEB.netlify.app/api/health
+   Debe mostrar aiConfigured:true.
+5) Abre tu web y selecciona en ⚙ «Gemini prioritario».
+6) Consultas directas documentales funcionan aun sin la clave.
+
+No hay que ejecutar Python, ni colocar claves en GitHub.
+Leer guias/14_GITHUB_NETLIFY_GEMINI_PASO_A_PASO.md

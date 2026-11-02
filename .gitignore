@@ -1,0 +1,17 @@
+# No publicar secretos ni configuraciones locales
+.env
+.env.*
+!.env.example
+node_modules/
+.DS_Store
+*.log
+coverage/
+playwright-report/
+_test_output/
+
+.env
+.env.*
+!.env.example
+node_modules/
+.netlify/
+.DS_Store
