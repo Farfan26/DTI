@@ -1,0 +1,21 @@
+flowchart TD
+    A[Inicio PMO-Bot SIGRED] --> B[Menú inicial y dominios PMO]
+    B --> C{Dominio seleccionado}
+    C -->|Gobernanza| D[3 consultas de patrocinio, alcance y autoridad]
+    C -->|Cronograma| E[3 consultas de ruta crítica, hitos y holgura]
+    C -->|EVM| F[3 consultas de AC PV EV, CPI SPI EAC y variaciones]
+    C -->|Libre| G[Texto libre]
+    D --> H[Capturar pregunta, dominio e historial]
+    E --> H
+    F --> H
+    G --> H
+    H --> I[Buscar fichas y fragmentos documentales]
+    I --> J{Gemini habilitado y evidencia suficiente}
+    J -->|Sí| K[Función privada /api/chat + Gemini]
+    J -->|No| L[Fallback documental seguro]
+    K --> M{Respuesta del proveedor}
+    M -->|Correcta| N[Presentar respuesta y fuentes]
+    M -->|Error o cuota| L
+    L --> N
+    N --> O[Otra pregunta / nuevo dominio / exportar chat]
+    O --> B
