@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {PMO_DOMAINS} from '../sitio/assets/pmo-domains.mjs';
+const prompt=readFileSync(new URL('../prompts/SYSTEM_PROMPT_PMO_SOBRESALIENTE_V12.md',import.meta.url),'utf8');
+const backend=readFileSync(new URL('../netlify/functions/chat.mjs',import.meta.url),'utf8');
+for(const term of ['Asesor Senior','Zero-Shot','One-Shot','Few-Shot','<<<EVIDENCIA_DOCUMENTAL>>>','Diagnóstico ejecutivo','Alternativas y trade-offs','Recomendación PMO','Esa información no se encuentra registrada'])test('Rúbrica: prompt contiene '+term,()=>assert.ok(prompt.includes(term)));
+test('Backend conserva Gemini seguro',()=>{assert.match(backend,/process\.env\.GEMINI_API_KEY/);assert.match(backend,/generativelanguage\.googleapis\.com/);assert.match(backend,/x-goog-api-key/);assert.match(backend,/path:'\/api\/chat'/);});
+test('Backend aplica delimitadores al contexto',()=>{assert.match(backend,/<<<EVIDENCIA_DOCUMENTAL>>>/);assert.match(backend,/<<<PREGUNTA>>>/);});
+test('Dominios y nueve consultas',()=>assert.equal(Object.values(PMO_DOMAINS).reduce((x,v)=>x+v.questions.length,0),9));
