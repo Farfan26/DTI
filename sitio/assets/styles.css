@@ -216,3 +216,11 @@ html,body{font-family:"Inter","Segoe UI",system-ui,-apple-system,Arial,sans-seri
 .action-dock.is-expanded .action-track{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
 @media(max-width:760px){.action-dock.is-expanded .action-track{grid-template-columns:repeat(2,minmax(0,1fr));max-height:min(42vh,320px);overflow-y:auto;overflow-x:hidden}}
 @media(max-width:360px){.action-dock-title{font-size:10.5px}.dock-expand{font-size:10px}}
+
+/* V16: panel ejecutivo, legibilidad y contraste mantenidos */
+.entry.assistant .entry-bubble,.entry.bot .entry-bubble{line-height:1.8;letter-spacing:.002em}
+.entry-bubble strong{font-weight:750}
+.source-link{border-radius:9px;transition:background .15s,border-color .15s}
+.source-link:hover{background:#e5f1fb;border-color:#a9c8e4}
+.pmo-domain-button:focus-visible,.dock-expand:focus-visible{outline:3px solid #91bee3;outline-offset:3px}
+@media(max-width:760px){.entry-bubble{line-height:1.7}.source-link{font-size:11px}}
