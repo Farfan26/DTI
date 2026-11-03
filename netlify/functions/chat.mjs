@@ -11,6 +11,8 @@ import {getAnswer,searchKnowledge} from '../../sitio/assets/search.mjs';
 import {resolveFollowup,scheduleFallbackAdvice} from './followup.mjs';
 import {domainFromTopic,domainFromQuestion,domainFallback,PMO_DOMAINS} from '../../sitio/assets/pmo-domains.mjs';
 import {findPMOQuestion,pmoSourceLinks} from '../../sitio/assets/pmo-answers.mjs';
+import {detectTrap} from '../../sitio/assets/trap-guards.mjs';
+import {lookupLocalFAQ} from '../../sitio/assets/faq-index.mjs';
 
 const FALLBACK='No encontré información confirmada para esa pregunta en el Informe Final de SIGRED. 😊 Puedes consultarme por el prototipo, el semáforo, las pruebas de usabilidad, las figuras o la inversión proyectada. ¿Qué tema te gustaría explorar?';
 const MODEL=()=>process.env.GEMINI_MODEL||'gemini-3.5-flash-lite';
@@ -61,8 +63,12 @@ export default async function handler(req){
   return reply({answer:response,mode:'local',aiStatus:'courtesy',sourceLinks:[],sources:[]});
  }
  if(/\b(mundial (de )?2022|capital de francia|horoscopo|criptomonedas|pronostico del tiempo|receta de cocina)\b/i.test(normalizedDirect))return reply({answer:'¡Interesante pregunta! 😊 Me especializo en SIGRED y prefiero no atribuir temas externos a sus documentos. Puedes preguntarme cómo se reserva, qué muestran las 14 pantallas, qué resultados tuvo la validación o pedirme figuras del informe final.',mode:'local',aiStatus:'out_of_scope',sourceLinks:[],sources:[]});
+ const trap=detectTrap(question);
+ if(trap)return reply({answer:trap.answer,mode:'local',reason:'trap_guard_'+trap.id,aiStatus:'documentary_safety',sourceLinks:trap.sourceLinks,sources:trap.sourceLinks.map(x=>x.path)});
  const domain=domainFromTopic(topic)||domainFromQuestion(question);
  const pmoQA=findPMOQuestion(question,topic);
+ const faqId=lookupLocalFAQ(question);
+ const faqRec=faqId?facts.records.find(r=>r.id===faqId):null;
  const hist=parseHistory(data.history);
  // El historial aporta contexto para búsquedas, nunca se toma como fuente oficial.
  const followup=resolveFollowup(question,hist,topic);
@@ -72,6 +78,7 @@ export default async function handler(req){
  let local=localReply(query,top,masterHits);
  if(domain)local={answer:domainFallback(domain),sourceLinks:[],reason:'pmo_domain_safe_fallback'};
  if(pmoQA)local={answer:pmoQA.answer,sourceLinks:pmoSourceLinks(pmoQA),reason:'pmo_documented_answer'};
+ if(faqRec&&!pmoQA)local={answer:faqRec.answer,sourceLinks:factLinks([faqRec]),reason:'local_indexed_faq'};
  if(followup?.isScheduleAdvice && (top.length||masterHits.length)){
   local={answer:scheduleFallbackAdvice(),sourceLinks:local.sourceLinks,reason:'conditional_hypothesis'};
  }
@@ -79,7 +86,7 @@ export default async function handler(req){
  const key=process.env.GEMINI_API_KEY||'';
  const aiEnabled=process.env.ENABLE_PUBLIC_AI==='true';
  const normalized=question.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/^[¿?¡!\s]+/,'');
- if(mode==='local'||!key||!aiEnabled||(mode==='auto'&&!domain&&!followup&&local.reason==='local_fact'&&directRx.test(normalized))){
+ if(mode==='local'||!key||!aiEnabled||(mode==='auto'&&local.reason==='local_indexed_faq')||(mode==='auto'&&!domain&&!followup&&local.reason==='local_fact'&&directRx.test(normalized))){
     const aiStatus=mode==='local'?'local_selected':!key?'key_missing':!aiEnabled?'public_ai_disabled':'local_optimization';
     return reply({...local,mode:'local',aiStatus,sources:sourceLinks.map(s=>s.path),sourceLinks,model:null});
  }
