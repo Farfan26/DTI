@@ -224,3 +224,8 @@ html,body{font-family:"Inter","Segoe UI",system-ui,-apple-system,Arial,sans-seri
 .source-link:hover{background:#e5f1fb;border-color:#a9c8e4}
 .pmo-domain-button:focus-visible,.dock-expand:focus-visible{outline:3px solid #91bee3;outline-offset:3px}
 @media(max-width:760px){.entry-bubble{line-height:1.7}.source-link{font-size:11px}}
+
+/* V17: casos de evaluación oficiales, diseño compacto y responsive */
+.cp-evaluation{margin:14px 0;padding:15px;border-radius:16px;border:1px solid var(--border,#cbd5e1);background:rgba(26,83,126,.035)}
+.cp-evaluation h2{font-size:1rem;margin:0 0 5px;color:inherit}.cp-evaluation p{font-size:.8rem;margin:0 0 10px;opacity:.8}
+.cp-case-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px}.cp-case-button{display:flex;flex-direction:column;gap:4px;border:1px solid #abc5d4;background:#f3f9fc;border-radius:10px;color:#163f61;text-align:left;padding:10px;cursor:pointer;min-width:0}.cp-case-button:hover,.cp-case-button:focus-visible{border-color:#126eaa;box-shadow:0 3px 10px #0b4f821f;outline:2px solid transparent}.cp-case-button span{font-size:.78rem;overflow-wrap:anywhere}@media(max-width:700px){.cp-case-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}

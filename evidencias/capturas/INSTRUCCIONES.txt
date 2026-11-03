@@ -1,0 +1,2 @@
+Guardar aquí cinco capturas originales obtenidas en el navegador desde el despliegue real: CP-01.png a CP-05.png.
+No se incluyen capturas sintéticas ni atribuciones de ejecución a Gemini sin prueba real.

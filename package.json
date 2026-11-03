@@ -1,6 +1,6 @@
 {
   "name": "sigred-pmo-bot-v10-final-gemini",
-  "version": "16.0.0",
+  "version": "17.0.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -9,11 +9,12 @@
   "scripts": {
     "start": "node pruebas/preview-v8.mjs",
     "dev": "node pruebas/preview-v8.mjs",
-    "test": "node --test pruebas/actual-v10.test.mjs pruebas/dominios-pmo.test.mjs pruebas/rubrica-v12.test.mjs pruebas/pmo-v14.test.mjs pruebas/pruebas_2000_v15.test.mjs pruebas/calidad-v16.test.mjs",
+    "test": "node --test pruebas/actual-v10.test.mjs pruebas/dominios-pmo.test.mjs pruebas/rubrica-v12.test.mjs pruebas/pmo-v14.test.mjs pruebas/pruebas_2000_v15.test.mjs pruebas/calidad-v16.test.mjs pruebas/casos-oficiales-v17.test.mjs",
     "preview": "node pruebas/preview-v8.mjs",
     "preview:gemini": "node --env-file=.env pruebas/preview-v8.mjs",
     "test:banco": "node --test pruebas/pruebas_2000_v15.test.mjs",
-    "test:calidad": "node --test pruebas/calidad-v16.test.mjs"
+    "test:calidad": "node --test pruebas/calidad-v16.test.mjs",
+    "test:oficial": "node --test pruebas/casos-oficiales-v17.test.mjs"
   },
-  "description": "SIGRED V16: análisis ejecutivo formal, RAG documental 88 páginas, controles anti-alucinación, Gemini conservado"
+  "description": "SIGRED V17: gobierno, seguridad, casos CP01-CP05, 4 documentos RAG oficiales y Gemini preservado"
 }

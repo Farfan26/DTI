@@ -1,0 +1,176 @@
+[
+  {
+    "id": "charter-1-0",
+    "source": "charter",
+    "page": 1,
+    "text": "SIGRED | PMO BOT | EQUIPO 01 Trabajo grupal: Bot Asistente de PMO (No-Code) Página 1 01. Project Charter | Acta de Constitución Documento de conocimiento RAG | 21/10/2026 1. Identificación del proyecto Nombre: Diseño de un sistema web para la gestión y reserva de espacios deportivos del Área de Deportes de la Universidad de Piura - campus Piura (SIGRED). Director del proyecto: Franklin Olano Medina. Equipo N.° 01: Mikhe Alcas Chapoñay, Fátima del Rosario Cortez Jacinto, Dany Farfán Moscol e Isabel Valencia Chávez. Beneficiarios: estudiantes de pregrado y posgrado, docentes, personal administrativo y Área de Deportes de UDEP campus Piura. 2. Objetivo y horizonte Objetivo general del acta: presentar el diseño de SIGRED con metodología de dirección de proyectos y validar un prototipo, durante el periodo académico 2026-II. Hito Fecha consignada Inicio formal según acta 29 de agosto de 2026 Informe final planifi"
+  },
+  {
+    "id": "charter-1-650",
+    "source": "charter",
+    "page": 1,
+    "text": "bjetivo y horizonte Objetivo general del acta: presentar el diseño de SIGRED con metodología de dirección de proyectos y validar un prototipo, durante el periodo académico 2026-II. Hito Fecha consignada Inicio formal según acta 29 de agosto de 2026 Informe final planificado 14 de noviembre de 2026 3. Alcance y exclusiones Incluye levantamiento de procesos, identificación de requisitos, diseño de arquitectura e interfaces, prototipo navegable, pruebas de usabilidad, análisis de viabilidad y documentos de gestión del proyecto. Excluye despliegue institucional en UDEP, migración de reservas históricas, integración con sistemas institucionales, pagos, aplicación móvil nativa, biometría y soporte posproyecto. La aprobación de solicitudes sigue requiriendo la participación autorizada del Área de Deportes. 4. Criterios de éxito (metas, no resultados) Dimensión Criterio planificado Alcance Cinco entregas parciales "
+  },
+  {
+    "id": "charter-1-1300",
+    "source": "charter",
+    "page": 1,
+    "text": "agos, aplicación móvil nativa, biometría y soporte posproyecto. La aprobación de solicitudes sigue requiriendo la participación autorizada del Área de Deportes. 4. Criterios de éxito (metas, no resultados) Dimensión Criterio planificado Alcance Cinco entregas parciales más informe final; aprobación académica y validación del prototipo. Costo Variación máxima permitida: 10 % frente a presupuesto planificado. Cronograma Cumplimiento de hitos oficiales sin entregas tardías. Calidad Satisfacción/usabilidad objetivo ≥ 80 % y nota final objetivo ≥ 16. 5. Línea base presupuestaria"
+  },
+  {
+    "id": "charter-2-0",
+    "source": "charter",
+    "page": 2,
+    "text": "SIGRED | PMO BOT | EQUIPO 01 Trabajo grupal: Bot Asistente de PMO (No-Code) Página 2 Categoría Planificado (S/) Servicios 308.50 Recursos humanos (valorización) 26,000.00 Recursos operativos 245.00 Prototipo / propuesta 0.00 Costo estimado sin contingencia 26,553.50 Reserva de contingencia (10 %) 2,655.35 Total preaprobado 29,208.85 Nota de control: Los recursos humanos incluyen una valorización académica del tiempo de los integrantes; no equivalen necesariamente a desembolsos efectivos. El costo real acumulado y reservas usadas no fueron acreditados. 6. Stakeholders clave Lic. Víctor Zapata Figallo (responsable de Deportes); personal administrativo y practicante del Área de Deportes; estudiantes; personal de TI; equipo de proyecto; Dr. Ing. Dante Guerrero como evaluador académico (según acta). 7. Fuentes y estado Fuentes: Acta de Constitución del Proyecto, pp. 1-7; libro Estimación de Gastos, hoja Gastos -"
+  },
+  {
+    "id": "charter-2-650",
+    "source": "charter",
+    "page": 2,
+    "text": "trativo y practicante del Área de Deportes; estudiantes; personal de TI; equipo de proyecto; Dr. Ing. Dante Guerrero como evaluador académico (según acta). 7. Fuentes y estado Fuentes: Acta de Constitución del Proyecto, pp. 1-7; libro Estimación de Gastos, hoja Gastos - Equipo 1. La línea base aquí presentada proviene del acta y se considera estimación preaprobada."
+  },
+  {
+    "id": "cronograma-1-0",
+    "source": "cronograma",
+    "page": 1,
+    "text": "SIGRED | PMO BOT | EQUIPO 01 Trabajo grupal: Bot Asistente de PMO (No-Code) Página 1 02. WBS/EDT y Cronograma | SIGRED Documento de conocimiento RAG | 21/10/2026 1. Línea base de planificación Periodo planificado del proyecto: 29 de agosto al 14 de noviembre de 2026. El equipo confirmó que cuatro de seis entregables oficiales están terminados; este indicador no sustituye la medición de horas o valor ganado. 2. Entregables de primer nivel Entregable oficial Contenido resumido Situación comunicada Informe Parcial 1 Problema, antecedentes y contexto Completado Informe Parcial 2 Marco teórico y metodología Completado Informe Parcial 3 Análisis / planeamiento y avance de propuesta Completado Informe Parcial 4 Análisis, diseño y prototipo en informe académico Completado* Informe Parcial 5 Validación, evaluación de resultados y complementos finales Pendiente Informe Final Consolidación, revisión, conclusiones y ex"
+  },
+  {
+    "id": "cronograma-1-650",
+    "source": "cronograma",
+    "page": 1,
+    "text": "planeamiento y avance de propuesta Completado Informe Parcial 4 Análisis, diseño y prototipo en informe académico Completado* Informe Parcial 5 Validación, evaluación de resultados y complementos finales Pendiente Informe Final Consolidación, revisión, conclusiones y exposición del prototipo Pendiente Nota de control: * Situación de entregables comunicada por el equipo; la aprobación formal por el docente no fue verificada. La EDT y el documento de alcance utilizan distribuciones distintas de capítulos por informe; contrastar con la plantilla oficial antes de la exposición. 3. EDT resumida (según documento Crear la EDT) Nivel Elemento Componentes 1 Gestión del proyecto Acta de constitución; plan para dirección del proyecto; documento de cierre. 2 Informe parcial 1 Marco contextual y planteamiento del problema. 3 Informe parcial 2 Marco teórico y metodología. 4 Informe parcial 3 Levantamiento de procesos y a"
+  },
+  {
+    "id": "cronograma-1-1300",
+    "source": "cronograma",
+    "page": 1,
+    "text": "ntes 1 Gestión del proyecto Acta de constitución; plan para dirección del proyecto; documento de cierre. 2 Informe parcial 1 Marco contextual y planteamiento del problema. 3 Informe parcial 2 Marco teórico y metodología. 4 Informe parcial 3 Levantamiento de procesos y análisis/diseño del sistema. 5 Informe parcial 4 Desarrollo y validación del prototipo; mejora continua. 6 Informe parcial 5 Evaluación económico-social; análisis y discusión. 7 Informe final Secciones preliminares y referencias; conclusiones y anexos. 4. Hitos y fechas planificadas del Excel de Gantt"
+  },
+  {
+    "id": "cronograma-2-0",
+    "source": "cronograma",
+    "page": 2,
+    "text": "SIGRED | PMO BOT | EQUIPO 01 Trabajo grupal: Bot Asistente de PMO (No-Code) Página 2 Código Hito de la programación Fecha en Gantt E1 Entrega Informe Parcial 1 06/09/2026 E2 Entrega Informe Parcial 2 19/09/2026 E3 Entrega Informe Parcial 3 03/10/2026 E4 Entrega Informe Parcial 4 17/10/2026 E5 Entrega Informe Parcial 5 31/10/2026 E6 Entrega plan de dirección e informe de cierre 11/11/2026 E7 Entrega Informe Final 14/11/2026 5. Gestión y control del cronograma Método: precedencia, diagrama de Gantt y cálculo de ruta crítica. Duración de actividades en horas. Revisión y actualización semanal. Umbral de control establecido: ±10 % sobre duración planificada; desviaciones mayores deben revisarse para posible acción correctiva. 6. Observaciones de calidad del dato • La hoja Gantt refleja porcentajes de avance antiguos (por ejemplo, E4 al 0 %) que no coinciden con el avance por entregables confirmado posteriormente"
+  },
+  {
+    "id": "cronograma-2-650",
+    "source": "cronograma",
+    "page": 2,
+    "text": "lanificada; desviaciones mayores deben revisarse para posible acción correctiva. 6. Observaciones de calidad del dato • La hoja Gantt refleja porcentajes de avance antiguos (por ejemplo, E4 al 0 %) que no coinciden con el avance por entregables confirmado posteriormente por el equipo. • La actividad O de la hoja de cálculo aparece con fechas del 04/10/2024 al 10/10/2024, probablemente una inconsistencia de captura; no se corrige sin validación. • Las fechas del Excel son hitos planificados. No demuestran entrega efectiva, aprobación ni ausencia de retrasos. Fuentes: Crear la EDT, pp. 1-4; Desarrollar el cronograma (Word), pp. 1-4; Desarrollar el cronograma (Excel), hoja Diagrama de Gantt; Planificar la gestión del cronograma, pp. 1-6."
+  },
+  {
+    "id": "cronograma-2-1300",
+    "source": "cronograma",
+    "page": 2,
+    "text": " el cronograma (Excel), hoja Diagrama de Gantt; Planificar la gestión del cronograma, pp. 1-6."
+  },
+  {
+    "id": "riesgos-1-0",
+    "source": "riesgos",
+    "page": 1,
+    "text": "SIGRED | PMO BOT | EQUIPO 01 Trabajo grupal: Bot Asistente de PMO (No-Code) Página 1 03. Matriz de Riesgos | SIGRED Documento de conocimiento RAG | 21/10/2026 1. Convenciones del registro El documento oficial identifica 12 riesgos distribuidos en cuatro categorías: TEC (técnicos), GES (gestión), COM (comerciales / aceptación y comunicación) y EXT (externos). Probabilidad e impacto son calificaciones cualitativas: alta, media o baja; la respuesta puede ser mitigar o aceptar activamente. Nota de control: El taller registra el TIPO de respuesta pero no desarrolla un plan de acciones detallado para cada ID. El bot debe indicar esta limitación en vez de inventar medidas. 2. Evaluación cualitativa de los 12 riesgos ID Categoría Probabilidad Impacto Respuesta R-T1 TEC.1 Media Alto Mitigar R-T2 TEC.2 Media Alto Mitigar R-T3 TEC.3 Media Alto Mitigar R-G1 GES.1 Media Alto Mitigar R-G2 GES.2 Alta Alto Mitigar R-G3 GES"
+  },
+  {
+    "id": "riesgos-1-650",
+    "source": "riesgos",
+    "page": 1,
+    "text": "vez de inventar medidas. 2. Evaluación cualitativa de los 12 riesgos ID Categoría Probabilidad Impacto Respuesta R-T1 TEC.1 Media Alto Mitigar R-T2 TEC.2 Media Alto Mitigar R-T3 TEC.3 Media Alto Mitigar R-G1 GES.1 Media Alto Mitigar R-G2 GES.2 Alta Alto Mitigar R-G3 GES.3 Baja Medio Mitigar R-C1 COM.1 Media Alto Mitigar R-C2 COM.2 Media Alto Mitigar R-C3 COM.3 Media Medio Mitigar R-E1 EXT.1 Media Alto Mitigar R-E2 EXT.2 Baja Medio Mitigar R-E3 EXT.3 Baja Alto Aceptar activamente 3. Detalle de riesgos, señales de alerta y responsables R-T1 · TEC.1 · Responsable: Farfán Moscol Dany Debido a limitaciones de capacidad y rendimiento del prototipo, el sistema podría presentar tiempos de respuesta elevados durante las pruebas, retrasando la validación con usuarios. Disparador: Tiempo de respuesta superior a 3 segundos o degradación visible al ejecutar pruebas simultáneas. R-T2 · TEC.2 · Responsable: Valencia Chave"
+  },
+  {
+    "id": "riesgos-1-1300",
+    "source": "riesgos",
+    "page": 1,
+    "text": " el sistema podría presentar tiempos de respuesta elevados durante las pruebas, retrasando la validación con usuarios. Disparador: Tiempo de respuesta superior a 3 segundos o degradación visible al ejecutar pruebas simultáneas. R-T2 · TEC.2 · Responsable: Valencia Chavez Isabel Debido a incompatibilidades entre componentes, navegadores o servicios de integración, algunas funciones podrían ejecutarse de forma incorrecta, afectando la experiencia y la continuidad del flujo de reserva."
+  },
+  {
+    "id": "riesgos-2-0",
+    "source": "riesgos",
+    "page": 2,
+    "text": "SIGRED | PMO BOT | EQUIPO 01 Trabajo grupal: Bot Asistente de PMO (No-Code) Página 2 Disparador: Errores recurrentes de integración, fallos en más de un navegador o respuestas inesperadas de servicios conectados. R-T3 · TEC.3 · Responsable: Valencia Chavez Isabel Debido a validaciones insuficientes o fallos en el manejo de datos, podrían registrarse reservas duplicadas, pérdida de información o inconsistencias, afectando la confiabilidad de SIGRED. Disparador: Registros duplicados, campos inconsistentes, pérdida de datos en pruebas o diferencias entre disponibilidad mostrada y almacenada. R-G1 · GES.1 · Responsable: Olano Medina Franklin Debido a disponibilidad limitada o bajo compromiso de integrantes del equipo, podrían retrasarse actividades críticas de análisis, desarrollo y pruebas, afectando los hitos del proyecto. Disparador: Tareas críticas vencidas, inasistencias reiteradas o avance semanal menor a"
+  },
+  {
+    "id": "riesgos-2-650",
+    "source": "riesgos",
+    "page": 2,
+    "text": "do a disponibilidad limitada o bajo compromiso de integrantes del equipo, podrían retrasarse actividades críticas de análisis, desarrollo y pruebas, afectando los hitos del proyecto. Disparador: Tareas críticas vencidas, inasistencias reiteradas o avance semanal menor al 90 % de lo planificado. R-G2 · GES.2 · Responsable: Olano Medina Franklin Debido a estimaciones optimistas o dependencias no previstas, las actividades podrían exceder su duración planificada, afectando la fecha de entrega del proyecto. Disparador: Desviación acumulada mayor al 10 % del cronograma o dos hitos consecutivos con retraso. R-G3 · GES.3 · Responsable: Olano Medina Franklin Debido a una estimación insuficiente de recursos o costos, el proyecto podría requerir capacidad adicional no prevista, afectando el presupuesto y la ejecución de actividades. Disparador: Consumo de recursos superior al 90 % de lo planificado antes de completar"
+  },
+  {
+    "id": "riesgos-2-1300",
+    "source": "riesgos",
+    "page": 2,
+    "text": "Franklin Debido a una estimación insuficiente de recursos o costos, el proyecto podría requerir capacidad adicional no prevista, afectando el presupuesto y la ejecución de actividades. Disparador: Consumo de recursos superior al 90 % de lo planificado antes de completar el 80 % del trabajo asociado. R-C1 · COM.1 · Responsable: Cortez Jacinto Fátima del Rosario Debido a resistencia de los usuarios al cambio del proceso actual de reservas, podría disminuir la adopción de SIGRED, afectando el logro de los beneficios esperados. Disparador: Comentarios negativos recurrentes, rechazo a usar el prototipo o intención de continuar con medios manuales. R-C2 · COM.2 · Responsable: Farfán Moscol Dany Debido a baja disponibilidad o interés del Área de Deportes para revisar entregables, podría retrasarse la validación de requisitos y funcionalidades, generando retrabajo y demoras. Disparador: Dos reuniones de validación "
+  },
+  {
+    "id": "riesgos-2-1950",
+    "source": "riesgos",
+    "page": 2,
+    "text": " R-C2 · COM.2 · Responsable: Farfán Moscol Dany Debido a baja disponibilidad o interés del Área de Deportes para revisar entregables, podría retrasarse la validación de requisitos y funcionalidades, generando retrabajo y demoras. Disparador: Dos reuniones de validación reprogramadas o entregables pendientes de aprobación por más de 5 días hábiles. R-C3 · COM.3 · Responsable: Alcas Chapoñay Mikhe Debido a información incompleta o poco confiable proporcionada por los usuarios, podrían definirse requisitos incorrectos, afectando el diseño y la aceptación del sistema. Disparador: Respuestas contradictorias, datos faltantes o cambios frecuentes en una misma regla operativa durante la validación. R-E1 · EXT.1 · Responsable: Alcas Chapoñay Mikhe Debido a restricciones de acceso a información interna de la UDEP, el equipo podría no contar oportunamente con reglas, horarios o datos necesarios, retrasando el análisis"
+  },
+  {
+    "id": "riesgos-2-2600",
+    "source": "riesgos",
+    "page": 2,
+    "text": " una misma regla operativa durante la validación. R-E1 · EXT.1 · Responsable: Alcas Chapoñay Mikhe Debido a restricciones de acceso a información interna de la UDEP, el equipo podría no contar oportunamente con reglas, horarios o datos necesarios, retrasando el análisis y la configuración de SIGRED. Disparador: Solicitud de información sin respuesta por más de 5 días hábiles o acceso denegado a datos requeridos. R-E2 · EXT.2 · Responsable: Alcas Chapoñay Mikhe"
+  },
+  {
+    "id": "riesgos-3-0",
+    "source": "riesgos",
+    "page": 3,
+    "text": "SIGRED | PMO BOT | EQUIPO 01 Trabajo grupal: Bot Asistente de PMO (No-Code) Página 3 Debido a la limitada disponibilidad de antecedentes y referencias institucionales, podrían omitirse reglas o excepciones del proceso actual, afectando la completitud de los requisitos. Disparador: Ausencia de procedimientos documentados, referencias desactualizadas o información distinta entre responsables consultados. R-E3 · EXT.3 · Responsable: Olano Medina Franklin Debido a cambios en plazos, políticas o directrices institucionales de la UDEP, podría ser necesario modificar prioridades, alcance o fechas del proyecto, afectando el plan aprobado. Disparador: Comunicación oficial de nuevas directrices, modificación del calendario institucional o cambio formal de reglas del Área de Deportes. 4. Priorización y seguimiento R-G2 (riesgo de desviación del cronograma) está clasificado con probabilidad ALTA e impacto ALTO: es el c"
+  },
+  {
+    "id": "riesgos-3-650",
+    "source": "riesgos",
+    "page": 3,
+    "text": " Comunicación oficial de nuevas directrices, modificación del calendario institucional o cambio formal de reglas del Área de Deportes. 4. Priorización y seguimiento R-G2 (riesgo de desviación del cronograma) está clasificado con probabilidad ALTA e impacto ALTO: es el caso cualitativo más prioritario registrado. Otros riesgos tienen impacto ALTO y probabilidad MEDIA (por ejemplo, R-T1, R-T2, R-T3, R-G1, R-C1, R-C2 y R-E1), sin un desempate cuantitativo formal en la matriz. Medida de control documentada en el Plan de Gestión del Cronograma: revisión semanal y análisis de desviaciones superiores al 10 %. En el Plan de Gestión de Riesgos se menciona, como estrategia general, la validación con usuarios para disminuir problemas de aceptación. No equivalen a planes individualizados aprobados para cada riesgo. Fuentes: Identificar los riesgos y planificar la respuesta a riesgos, pp. 1-6; Planificar la gestión de r"
+  },
+  {
+    "id": "riesgos-3-1300",
+    "source": "riesgos",
+    "page": 3,
+    "text": "iona, como estrategia general, la validación con usuarios para disminuir problemas de aceptación. No equivalen a planes individualizados aprobados para cada riesgo. Fuentes: Identificar los riesgos y planificar la respuesta a riesgos, pp. 1-6; Planificar la gestión de riesgos, pp. 1-3; Planificar la gestión del cronograma, p. 1."
+  },
+  {
+    "id": "estado-1-0",
+    "source": "estado",
+    "page": 1,
+    "text": "SIGRED | PMO BOT | EQUIPO 01 Trabajo grupal: Bot Asistente de PMO (No-Code) Página 1 04. Informe de Estado | Corte: 21/10/2026 Documento de conocimiento RAG | 21/10/2026 1. Resumen ejecutivo SIGRED presenta avances en gestión y diseño de una solución web para consultas y reservas de espacios deportivos de UDEP. De acuerdo con la confirmación del equipo, los Informes Parciales 1 a 4 están terminados y restan el Informe Parcial 5 y el Informe Final, además de la exposición del prototipo. Avance por número de entregables: 4 / 6 x 100 = 66.67 %. Se trata de una medida simple que asigna idéntico peso a cada entregable, no de una medición física de alcance, carga de trabajo ni valor ganado (EVM). Semáforo del proyecto: NO DETERMINADO oficialmente. No hay evidencia suficiente para concluir Verde, Amarillo o Rojo a partir de la proporción de entregables, aunque existen alertas documentales que requieren seguimiento"
+  },
+  {
+    "id": "estado-1-650",
+    "source": "estado",
+    "page": 1,
+    "text": " alcance, carga de trabajo ni valor ganado (EVM). Semáforo del proyecto: NO DETERMINADO oficialmente. No hay evidencia suficiente para concluir Verde, Amarillo o Rojo a partir de la proporción de entregables, aunque existen alertas documentales que requieren seguimiento. 2. Indicadores disponibles Indicador Valor / Estado Nivel de evidencia Avance por entregables 66.67 % (4 de 6) Declaración actual del equipo Avance físico ponderado / EVM No calculado Sin valores PV, EV, AC consolidados Presupuesto total preaprobado S/ 29,208.85 Acta y estimación de gastos Reserva de contingencia prevista S/ 2,655.35 Acta y estimación de gastos Costo real ejecutado No informado Dato faltante Variación presupuestaria real No calculable Sin costo real acumulado Semáforo (verde/amarillo/rojo) Sin clasificación oficial Necesita análisis/aprobación Informe Parcial 5 Pendiente; fecha 31/10/2026 Excel de cronograma Informe Final P"
+  },
+  {
+    "id": "estado-1-1300",
+    "source": "estado",
+    "page": 1,
+    "text": "cutado No informado Dato faltante Variación presupuestaria real No calculable Sin costo real acumulado Semáforo (verde/amarillo/rojo) Sin clasificación oficial Necesita análisis/aprobación Informe Parcial 5 Pendiente; fecha 31/10/2026 Excel de cronograma Informe Final Pendiente; fecha 14/11/2026 Excel / acta 3. Estado del prototipo El Informe Parcial 4 describe un prototipo navegable de 14 pantallas, con perfiles de usuario y administración. La versión demostrativa utiliza localStorage; dispone de código base para una posible integración con Google Apps Script y Sheets, pero esa conexión compartida requiere configuración y no debe considerarse desplegada sin verificación. La arquitectura objetivo para una implementación institucional contempla una API con Node.js/Express y persistencia PostgreSQL. El alcance académico excluye desplegar el sistema dentro de la infraestructura institucional de la UDEP."
+  },
+  {
+    "id": "estado-1-1950",
+    "source": "estado",
+    "page": 1,
+    "text": "e desplegada sin verificación. La arquitectura objetivo para una implementación institucional contempla una API con Node.js/Express y persistencia PostgreSQL. El alcance académico excluye desplegar el sistema dentro de la infraestructura institucional de la UDEP."
+  },
+  {
+    "id": "estado-2-0",
+    "source": "estado",
+    "page": 2,
+    "text": "SIGRED | PMO BOT | EQUIPO 01 Trabajo grupal: Bot Asistente de PMO (No-Code) Página 2 4. Resultados provisionales de usabilidad El Informe Parcial 4 contiene una tabla con cinco tareas de usabilidad y cifras de 100 % de éxito, además de una muestra de 10 estudiantes, 2 docentes/administrativos y 1 responsable del Área de Deportes. El equipo confirmó explícitamente que estos resultados son PROVISIONALES, por lo que no deben describirse como validación empírica concluyente. Nota de control: Existe además una cifra de 33 estudiantes encuestados en el diagnóstico inicial y una planificación de 100 estudiantes para otra fase de recolección. Antes de publicar resultados, distinguir participantes reales, muestra prevista y etapa de evaluación. 5. Alertas y pendientes • Faltan Informe Parcial 5, Informe Final y presentación académica del prototipo. • Validar formalmente los resultados de pruebas de usabilidad y sus "
+  },
+  {
+    "id": "estado-2-650",
+    "source": "estado",
+    "page": 2,
+    "text": "e publicar resultados, distinguir participantes reales, muestra prevista y etapa de evaluación. 5. Alertas y pendientes • Faltan Informe Parcial 5, Informe Final y presentación académica del prototipo. • Validar formalmente los resultados de pruebas de usabilidad y sus capturas/evidencias. • Confirmar el estado del semáforo a través del director/equipo con reglas de evaluación. • Registrar gasto real, reserva consumida y datos de desempeño antes de calcular variaciones. • Actualizar los porcentajes del Gantt y revisar una actividad con fecha de 2024. • Alinear la EDT y el documento de alcance respecto al contenido de los informes parciales. Fuentes: Acta de Constitución pp. 1-7; Informe Parcial 4 pp. 63-74; Excel Desarrollar el Cronograma; confirmaciones recientes del equipo sobre cuatro entregables finalizados y provisionalidad de resultados."
+  },
+  {
+    "id": "estado-2-1300",
+    "source": "estado",
+    "page": 2,
+    "text": "uentes: Acta de Constitución pp. 1-7; Informe Parcial 4 pp. 63-74; Excel Desarrollar el Cronograma; confirmaciones recientes del equipo sobre cuatro entregables finalizados y provisionalidad de resultados."
+  }
+]
