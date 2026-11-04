@@ -27,10 +27,10 @@ export function classifyIntent(question,history=[]){
  if(followupRx.test(q)&&Array.isArray(history)&&history.some(h=>h.role==='user'&&projectSignal(canon(h.text))))return 'followup';
  return 'offtopic';
 }
-const welcomes=['¡Hola! Me alegra saludarte. ¿Qué te gustaría conversar o revisar de SIGRED?', '¡Buenas! Encantado de ayudarte. Podemos conversar o revisar un aspecto del proyecto SIGRED.', '¡Hola, causa! ¿Todo bien? Cuéntame en qué te ayudo.'];
-const checkins=['¡Gracias por preguntar! Estoy disponible para ayudarte. ¿Cómo te está yendo?', 'Todo listo para conversar contigo. ¿Cómo va tu día?', '¡Qué gusto leerte! Aquí puedo ayudarte con lo que necesites sobre SIGRED. ¿Cómo estás?'];
-const tell=['Por aquí, preparado para conversar contigo o analizar SIGRED. ¿Qué tienes en mente?', '¡Te cuento que podemos revisar el estado, los riesgos y las decisiones de SIGRED! ¿Por dónde comenzamos?', 'Estoy listo para ayudarte con un análisis del proyecto. ¿Quieres ver los hitos o prefieres conversar un rato?'];
-const thanks=['¡Con gusto! Si necesitas otra consulta sobre SIGRED, aquí estoy.', '¡De nada! Será un gusto continuar ayudándote con SIGRED.', 'A tu disposición. ¿Quieres revisar algún punto más del proyecto?'];
+const welcomes=['¡Hola! Me alegra saludarte. ¿Qué te gustaría conversar o revisar de SIGRED?', '¡Buenas! Encantado de ayudarte. Podemos conversar o revisar un aspecto del proyecto SIGRED.', 'Un gusto saludarle. ¿Desea consultar información o analizar algún aspecto de SIGRED?'];
+const checkins=['¡Gracias por preguntar! Estoy disponible para ayudarte. ¿Cómo te está yendo?', 'Todo listo para conversar contigo. ¿Cómo va tu día?', 'Gracias por su mensaje. Estoy disponible para ayudarle con el proyecto SIGRED. ¿En qué puedo apoyarle?'];
+const tell=['Por aquí, preparado para conversar contigo o analizar SIGRED. ¿Qué tienes en mente?', 'Podemos revisar el avance, los riesgos y las alternativas de decisión de SIGRED. ¿Qué tema le interesa?', 'Estoy listo para ayudarte con un análisis del proyecto. ¿Quieres ver los hitos o prefieres conversar un rato?'];
+const thanks=['¡Con gusto! Si necesitas otra consulta sobre SIGRED, aquí estoy.', 'Con gusto. Quedo a su disposición para otra consulta sobre SIGRED.', 'A tu disposición. ¿Quieres revisar algún punto más del proyecto?'];
 export function socialFallback(question,history=[]){
  const q=canon(question);const n=history.filter(h=>h.role==='user').length;const seed=[...q].reduce((a,c)=>a+c.charCodeAt(0),0);const pick=list=>list[(n+seed)%list.length];
  if(/\b(gracias|agradezco)\b/.test(q))return pick(thanks);

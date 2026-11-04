@@ -1,6 +1,6 @@
 {
-  "name": "sigred-pmo-bot-v19-conversacional-flexible",
-  "version": "19.0.0",
+  "name": "sigred-pmo-bot-v20-gobernanza-evidencia",
+  "version": "20.0.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -9,13 +9,14 @@
   "scripts": {
     "start": "node pruebas/preview-v8.mjs",
     "dev": "node pruebas/preview-v8.mjs",
-    "test": "node --test pruebas/actual-v10.test.mjs pruebas/dominios-pmo.test.mjs pruebas/rubrica-v12.test.mjs pruebas/pmo-v14.test.mjs pruebas/pruebas_2000_v15.test.mjs pruebas/calidad-v16.test.mjs pruebas/casos-oficiales-v17.test.mjs pruebas/conversacion-v18.test.mjs pruebas/conversacion-v19.test.mjs",
+    "test": "node --test pruebas/actual-v10.test.mjs pruebas/dominios-pmo.test.mjs pruebas/rubrica-v12.test.mjs pruebas/pmo-v14.test.mjs pruebas/pruebas_2000_v15.test.mjs pruebas/calidad-v16.test.mjs pruebas/casos-oficiales-v17.test.mjs pruebas/conversacion-v18.test.mjs pruebas/conversacion-v19.test.mjs pruebas/banco-v20-1400.test.mjs",
     "preview": "node pruebas/preview-v8.mjs",
     "preview:gemini": "node --env-file=.env pruebas/preview-v8.mjs",
     "test:banco": "node --test pruebas/pruebas_2000_v15.test.mjs",
     "test:calidad": "node --test pruebas/calidad-v16.test.mjs",
     "test:oficial": "node --test pruebas/casos-oficiales-v17.test.mjs",
-    "test:conversacion": "node --test pruebas/conversacion-v18.test.mjs pruebas/conversacion-v19.test.mjs"
+    "test:conversacion": "node --test pruebas/conversacion-v18.test.mjs pruebas/conversacion-v19.test.mjs",
+    "test:masivo": "node --test pruebas/banco-v20-1400.test.mjs"
   },
-  "description": "SIGRED V19: clasificación tolerante a errores, charla natural con Gemini, RAG seguro, memoria por conversación y pruebas extensivas"
+  "description": "SIGRED V20: política D/C/P/S/ND, Gemini con respuesta contextual, pruebas masivas, seguridad RAG y evidencias auténticas."
 }

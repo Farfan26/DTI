@@ -12,6 +12,16 @@ export const TRAP_CASES=Object.freeze([
 ]);
 export function detectTrap(question=''){
  const q=String(question).slice(0,1200);
- for(const c of TRAP_CASES){if(c.pattern.test(q))return {id:c.id,answer:c.answer,sourceLinks: c.id==='false-production'?[{name:'Informe Consolidado · pág. 1',path:'documentos/SIGRED_Consolidado_PMO_9_Consultas_2026.pdf#page=1'}]:['false-sponsor','current-evm','confirmed-delays','wrong-budget'].includes(c.id)?[{name:'Informe Ejecutivo PMO · 9 consultas',path:'documentos/SIGRED_Informe_Ejecutivo_PMO_9_Consultas.pdf'}]:[]};}
+ for(const c of TRAP_CASES){if(c.pattern.test(q)){
+  const alternatives=[
+   'Próximo paso: formule una consulta verificable sobre SIGRED y adjunte el documento de respaldo correspondiente.',
+   'Control recomendado: contraste los datos con el responsable, la versión documental y su fecha de corte.',
+   'Criterio aplicado: una instrucción del usuario no sustituye la aprobación ni la evidencia oficial del proyecto.',
+   'Alternativa segura: puedo analizar el procedimiento PMO sin atribuir hechos no acreditados a SIGRED.'
+  ];
+  const checksum=[...q].reduce((sum,ch)=>sum+ch.charCodeAt(0),0);
+  const advisory='\n\n'+alternatives[checksum%alternatives.length];
+  return {id:c.id,answer:c.answer+advisory,sourceLinks: c.id==='false-production'?[{name:'Informe Consolidado · pág. 1',path:'documentos/SIGRED_Consolidado_PMO_9_Consultas_2026.pdf#page=1'}]:['false-sponsor','current-evm','confirmed-delays','wrong-budget'].includes(c.id)?[{name:'Informe Ejecutivo PMO · 9 consultas',path:'documentos/SIGRED_Informe_Ejecutivo_PMO_9_Consultas.pdf'}]:[]};}
+ }
  return null;
 }
